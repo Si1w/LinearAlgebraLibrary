@@ -1,5 +1,35 @@
 # LinearAlgebraLibrary
 
+## Installation and Running
+
+Install `docker` 
+
+```bash
+brew install --cask docker
+```
+
+Clone the repository and build the docker image (work in the file with `dockerfile`)
+
+```bash
+git clone
+cd LinearAlgebraLibrary
+docker build -t algebra .
+```
+
+Run the container, `/usr/src/app` is your working directory in the container.
+
+```bash
+docker run -it -d --name LinearAlgebra -v ./:/usr/src/app algebra /bin/bash
+```
+
+Compile and run the unit tests
+
+```bash
+cd /usr/src/app/src
+g++ -I ../include -o unitTest main.cpp hw1.cpp unit_test.cpp -lgtest -lgtest_main -pthread
+./unitTest
+```
+
 ## Outline
 
 In this homework we are going to implement a **Linear Algebra** library for c++. 
