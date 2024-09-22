@@ -30,6 +30,25 @@ g++ -I ../include -o unitTest main.cpp hw1.cpp unit_test.cpp -lgtest -lgtest_mai
 ./unitTest
 ```
 
+## Use the library
+
+Copy `hw1.h` and `hw1.cpp` to your project.
+
+Write the code in `main.cpp` to use the library.
+
+```cpp
+#include "hw1.h"
+```
+
+Example:
+```cpp
+Matrix matrix{algebra::zeros(5, 6)};
+Matrix matrix{algebra::random(4, 4, -5, 7)};
+Matrix inverse{algebra::inverse(matrix)};
+```
+
+Other usage examples can be found in `unit_test.cpp`.
+
 ## Outline
 
 In this homework we are going to implement a **Linear Algebra** library for c++. 
